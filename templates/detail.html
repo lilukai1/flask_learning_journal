@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+{% block content %}
+        <section>
+            <div class="container">
+                <div class="entry-list single">
+                    
+                    <article>
+                        <h1>{{ entry.title }}</h1>
+                        <time date="{{ entry.timestamp }}">{{ entry.timestamp.strftime('%m-%d-%Y') }}</date>
+                        <div class="entry">
+                            <h3>Time Spent: </h3>
+                            <p>{{ entry.time_spent }}</p>
+                        </div>
+                        <div class="entry">
+                            <h3>What I Learned:</h3>
+                            <p>{{ entry.content }}
+
+                            </div>
+                        <div class="entry">
+                            <h3>Resources to Remember:</h3>
+                            <p>
+                                {{ entry.resources }}
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+            <div class="edit">
+                <p><a href="{{ url_for('edit_entry', entry_id=entry.id) }}">Edit Entry</a></p>
+
+            </div>
+        </section>
+{% endblock %}
