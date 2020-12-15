@@ -13,12 +13,13 @@ class EntryForm(FlaskForm):
                                 DataRequired(), 
                                 Length(max=50)
                             ])
-    content = TextAreaField("Project Description",
+    content = TextAreaField(label="Project Description",
+                            
                             validators=[
                                 DataRequired()
                             ])
     timestamp = DateField(label="Project Date:",
-                    default=date.today(),
+                        default=date.today(),
                         validators=[
                                 DataRequired(),
                             ])
@@ -27,5 +28,6 @@ class EntryForm(FlaskForm):
                                 validators=[
                                 DataRequired(),
                             ])
-    resources = TextField(validators=[
+    resources = TextField(label="Resources",
+                        validators=[
                             ])
