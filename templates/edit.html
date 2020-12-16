@@ -12,13 +12,9 @@
                             {{ render_field(field) }}
                         {% endfor %}
                         <button type="submit" name="submit">Save</button>
-                        <a href="{{ url_for('delete_entry', entry_id=entry.id) }}">
-                            <button type="button" name="delete">Delete</button>
-                        </a>
+                        <a href="{{ url_for('delete_entry', entry_id=entry.id) }}"><button type="button" name="delete">Delete</button></a>
 
-                        <a href="{{ url_for('view_entry', entry_id=entry.id) }}">
-                            <button type="button" name="cancel">Cancel</button>
-                        </a>
+                        <a href="{{ url_for('view_entry', entry_id=entry.id) }}"><button type="button" name="cancel">Cancel</button></a>
                     </form>
                 </div>
             </div>

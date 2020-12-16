@@ -9,7 +9,7 @@
 
                     <form method="POST" action ="" class="form">
                         {{ form.hidden_tag() }}
-                        {% for field in form %}
+                        {% for field in form if field.id !="csrf_token" %}
                             {{ render_field(field) }}
                         {% endfor %}
                         <button type="submit" name="submit">Post!</button>
